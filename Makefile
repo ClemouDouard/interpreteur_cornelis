@@ -1,11 +1,18 @@
-output: main.o image.o pile.o 
-	gcc main.o image.o pile.o -o output
+CC=gcc
+CFLAGS=-Wall -Wextra  
+SRC=src/
+BUILD=obj/
+BIN=bin/
+DEPS=$(BUILD)image.o $(BUILD)pile.o
 
-main.o: main.c
-	gcc -c main.c
+all: clean main
 
-image.o: image.c image.h
-	gcc -c image.c
+$(BUILD)%.o : $(SRC)%.c
+	$(CC) $(CFLAGS) -o $@ $^ -c
 
-pile.o: pile.c pile.h
-	gcc -c pile.c
+main: $(DEPS) $(BUILD)main.o
+	$(CC) $(CFLAGS) -o $(BIN)$@ $^
+
+clean:
+	rm -rf obj/*
+	rm -rf bin/*
