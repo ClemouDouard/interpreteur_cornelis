@@ -1,3 +1,13 @@
+# Présentation
+
+Ceci est un projet de première année d'école d'ingénieur informatique. C'est un interpréteur d'un langage nommé cornelis et il ne fonctionne pas correctement.
+
+# Utilisation
+
+Faire :
+- `make main`
+- `./bin/main examples/[nom du fichier]`
+
 # Comportement attendu des programmes :
 
 - 99bottles.ppm : affiche les paroles de la chanson "99bottles of beer on the wall"
